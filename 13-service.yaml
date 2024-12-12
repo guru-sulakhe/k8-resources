@@ -1,0 +1,16 @@
+# This service is used to call nginx Pod
+apiVersion: v1
+kind: Service
+metadata: 
+  name: nginx
+spec: 
+  selectors:
+    name: frontend
+    project: expense
+    component: frontend
+    environment: dev
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    
