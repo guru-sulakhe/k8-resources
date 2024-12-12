@@ -1,0 +1,9 @@
+# a configMap is used to store non-confidential data in key-value pairs.
+kind: configMap
+apiVersion: v1
+metadata: 
+  name: guru97s
+data:
+  course: "DevOps with AWS"
+  trainer: "sivakumar"
+  github: "https://github.com/guru-sulakhe/repos/k8-resources"
