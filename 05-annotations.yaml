@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: annotations
+  labels:
+    course: k8
+    trainer: guru
+  annotations: 
+    kubernetes.io/created-by: 'guru'
+    jenkins.builds.url: 'https://jenkins.guru97s.cloud/transactions/k8-resources'
+spec:
+  containers:
+  - name: nginx
+    images: nginx
