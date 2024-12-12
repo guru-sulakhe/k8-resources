@@ -1,0 +1,15 @@
+# here labels are acted as selectors which are useful during connection to pod i..e acting as a service
+kind: Pod
+apiVersion: v1
+metadata: 
+  name: nginx
+  labels: 
+    name: frontend
+    project: expense
+    component: frontend
+    environment: dev
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+
