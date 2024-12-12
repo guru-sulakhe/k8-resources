@@ -1,4 +1,4 @@
-# here labels are acted as selectors which are useful during connection to pod i..e acting as a service
+# here labels are acted as selectors which are useful during connection to pod i..e useful for calling a service
 kind: Pod
 apiVersion: v1
 metadata: 
