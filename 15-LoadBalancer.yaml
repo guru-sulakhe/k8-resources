@@ -1,9 +1,9 @@
 kind: Service
 apiVersion: v1
 metadata: 
-  name: nginx-np
+  name: nginx-lb
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     name: frontend
     project: expense
@@ -11,6 +11,6 @@ spec:
     environment: dev
   ports:
   - protocol: TCP
-    port: 80 
+    port: 80
     targetPort: 80
     nodePort: 32760
