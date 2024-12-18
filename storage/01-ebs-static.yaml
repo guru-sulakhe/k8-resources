@@ -1,3 +1,4 @@
+# Persistent Volume is used to represent EBS volume inside Kubernetes(EKS), which acts as the bridge between EKS and EBS
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -6,9 +7,9 @@ spec:
   accessModes:
   - ReadWriteOnce
   capacity:
-    storage: 100Gi
+    storage: 100Gi # your volume storage size which is included while creating volume in ec2 resource of AWS
   csi:
-    driver: ebs.csi.aws.com
+    driver: ebs.csi.aws.com #EBS related Drivers
     fsType: ext4
     volumeHandle: vol-03c604538dd7d2f41 #your volume ID which is created recently in aws ec2 resource
 -------
@@ -25,7 +26,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 5Gi
+      storage: 5Gi #should be less than storage of Persistant volume 
 -------
 # usage process of PVC in pod
 #PVC should be represented in pod definition
@@ -42,7 +43,7 @@ spec:
     image: nginx
     volumeMounts:
     - name: persistent-storage
-      mountPath: /usr/share/nginx/html #nginx html path
+      mountPath: /usr/share/nginx/html #nginx html mountpath
   volumes:
   - name: persistent-storage
     persistentVolumeClaim:
@@ -55,7 +56,7 @@ metadata:
   name: nginx-lb
 spec:
   type: LoadBalancer
-  selector:
+  selector: #selector should have same labels which are included in pod definition of PVC 
     purpose: ebs-static
     project: expense
   ports:
