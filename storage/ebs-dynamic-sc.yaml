@@ -1,0 +1,7 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: expense-ebs-dynamic-sc
+reclaimPolicy: Retain # Retain is used to keep the PersistentVolume exists even after deletion of PersistentVolumeClaim
+provisioner: ebs.csi.aws.com
+volumeBindingMode: WaitForFirstConsumer

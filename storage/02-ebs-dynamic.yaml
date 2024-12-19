@@ -1,0 +1,36 @@
+# claiming process of PersistentVolume
+# PVC---> Persistent Volume Claim, pod should claim,i..e i want the volume from pod
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ebs-dynamic
+spec:
+  storageClassName: "expense-ebs-dynamic-sc" # mention your storage class name which is created for dynamic provision of volumes
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 4Gi #creating 4Gi volume size of volume in ec2 resource of aws
+-------
+#Attaching pvc to pod for the usage of pvc
+#PVC should be represented in pod definition
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-dynamic
+  labels:
+    purpose: ebs-dynamic
+    project: expense
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - name: persistent-storage
+      mountPath: /usr/share/nginx/html #nginx html mountpath
+  nodeSelector:
+    topology.kubernetes.io/zone: us-east-1c
+  volumes:
+  - name: persistent-storage
+    persistentVolumeClaim:
+      claimName: ebs-dynamic #include your persistant volume name which is created above

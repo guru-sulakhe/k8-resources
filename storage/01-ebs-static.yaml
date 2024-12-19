@@ -13,8 +13,8 @@ spec:
     fsType: ext4
     volumeHandle: vol-03c604538dd7d2f41 #your volume ID which is created recently in aws ec2 resource
 -------
-# claiming process of PersistantVolume
-# PVC---> Persistant Volume Claim, pod should claim,i..e i want the volume from pod
+# claiming process of PersistentVolume
+# PVC---> Persistent Volume Claim, pod should claim,i..e i want the volume from pod
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -26,9 +26,9 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 5Gi #should be less than storage of Persistant volume 
+      storage: 5Gi #should be less than storage of Persistent volume 
 -------
-# usage process of PVC in pod
+#Attaching pvc to pod for the usage of pvc
 #PVC should be represented in pod definition
 apiVersion: v1
 kind: Pod
@@ -44,6 +44,8 @@ spec:
     volumeMounts:
     - name: persistent-storage
       mountPath: /usr/share/nginx/html #nginx html mountpath
+  nodeSelector:
+    topology.kubernetes.io/zone: us-east-1c
   volumes:
   - name: persistent-storage
     persistentVolumeClaim:
