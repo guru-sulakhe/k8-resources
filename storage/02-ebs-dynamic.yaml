@@ -29,7 +29,7 @@ spec:
     - name: persistent-storage
       mountPath: /usr/share/nginx/html #nginx html mountpath
   nodeSelector:
-    topology.kubernetes.io/zone: us-east-1c
+    topology.kubernetes.io/zone: us-east-1c #your node avialability zone which is running properly by EKS cluster
   volumes:
   - name: persistent-storage
     persistentVolumeClaim:
