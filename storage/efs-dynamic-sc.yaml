@@ -6,4 +6,5 @@ provisioner: efs.csi.aws.com
 parameters:
   provisioningMode: efs-ap
   fileSystemId: fs-0c2d31a2e370dd80 #your EFS id
+   directoryPerms: "700"
   basePath: "/expense" #admin is assigning to expense project, it is your wish of using this storage class
