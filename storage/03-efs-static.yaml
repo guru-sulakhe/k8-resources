@@ -1,0 +1,65 @@
+# Persistent Volume is used to represent EFS volume inside Kubernetes(EKS), which acts as the bridge between EKS and EBS
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: efs-static
+spec:
+  capacity:
+    storage: 100Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: ""
+  persistentVolumeReclaimPolicy: Retain
+  csi:
+    driver: efs.csi.aws.com
+    volumeHandle: "fs-0024g198788635gc" # your EFS volume ID which is created in aws 
+-------
+# claiming process of PersistentVolume
+# PVC---> Persistent Volume Claim, pod should claim,i..e i want the volume from pod
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: efs-static-claim
+spec:
+  accessModes:
+    - ReadWriteOnce #the volume can be mounted as read-write by single node
+  storageClassName: ""
+  volumeName: efs-static # pv name
+  resources:
+    requests:
+      storage: 5Gi
+------
+#Attaching pvc to pod for the usage of pvc
+#PVC should be represented in pod definition
+apiVersion: v1
+kind: Pod
+metadata:
+  name: efs-app
+  labels:
+    purpose: efs-static
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - name: persistent-storage
+      mountPath: /usr/share/nginx/html
+  volumes:
+  - name: persistent-storage
+    persistentVolumeClaim:
+      claimName: efs-static-claim #pvc name
+-------
+# testing the application based on the internet we should use LoadBalancer Service
+kind: Service
+apiVersion: v1
+metadata: 
+  name: nginx-lb
+spec:
+  type: LoadBalancer
+  selector: #selector should have same labels which are included in pod definition of PVC 
+    purpose: efs-static
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80

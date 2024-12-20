@@ -1,0 +1,31 @@
+# claiming process of PersistentVolume
+# PVC---> Persistent Volume Claim, pod should claim,i..e i want the volume from pod
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: efs-dynamic-claim
+spec:
+  accessModes:
+    - ReadWriteMany #the volume can be mounted as read-write by many nodes
+  storageClassName: efs-dynamic-sc #your storageclass name of efs dynamic
+  resources:
+    requests:
+      storage: 5Gi
+---
+#Attaching pvc to pod for the usage of pvc
+#PVC should be represented in pod definition
+apiVersion: v1
+kind: Pod
+metadata:
+  name: efs-app
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      volumeMounts:
+        - name: persistent-storage
+          mountPath: /usr/share/nginx/html
+  volumes:
+    - name: persistent-storage
+      persistentVolumeClaim:
+        claimName: efs-dynamic-claim #your pvc name

@@ -7,7 +7,7 @@ metadata:
 spec:
   storageClassName: "expense-ebs-dynamic-sc" # mention your storage class name which is created for dynamic provision of volumes
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteOnce #the volume can be mounted as read-write by single node
   resources:
     requests:
       storage: 4Gi #creating 4Gi volume size of volume in ec2 resource of aws
