@@ -11,13 +11,15 @@ spec:
   resources:
     requests:
       storage: 5Gi
----
+------
 #Attaching pvc to pod for the usage of pvc
 #PVC should be represented in pod definition
 apiVersion: v1
 kind: Pod
 metadata:
-  name: efs-app
+  name: efs-dynamic-app
+  labels: 
+    purpose: efs-dynamic
 spec:
   containers:
     - name: nginx
@@ -29,3 +31,16 @@ spec:
     - name: persistent-storage
       persistentVolumeClaim:
         claimName: efs-dynamic-claim #your pvc name
+------
+# testing the application based on the internet we should use ClusterIP Service
+kind: Service
+apiVersion: v1
+metadata: 
+  name: nginx-dynamic
+spec:
+  selector: #selector should have same labels which are included in pod definition of PVC 
+    purpose: efs-dynamic
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
