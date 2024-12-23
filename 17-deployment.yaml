@@ -25,3 +25,20 @@ spec:
     spec:
     - name: nginx
       image: nginx
+-----
+# This service is used to call nginx Pod
+apiVersion: v1
+kind: Service
+metadata: 
+  name: nginx
+spec: 
+  selectors:
+    app: nginx
+    project: test-project
+    tier: web
+    extra-key: extra-value
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    
