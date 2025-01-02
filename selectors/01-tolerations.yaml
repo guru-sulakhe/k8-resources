@@ -11,7 +11,7 @@ spec:
   containers:
   - name: nginx
     image: nginx
-    imagePullPolicy: IfNotPresent
+    imagePullPolicy: Always #keep this Always, it will pull the image if present or not
   tolerations:
   - key: "example-key"
     operator: "Exists"
