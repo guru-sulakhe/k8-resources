@@ -16,3 +16,11 @@ spec:
   containers:
   - name: with-node-affinity
     image: nginx
+  tolerations:
+  - key: "project" #your key while taint an pod
+    operator: "Equal" 
+    value: "expense"
+    effect: "NoSchedule" #your effect which you mentioned while taint the pod
+  - key: "project" #your key while taint an pod
+    operator: "Exists"
+    effect: "NoSchedule"
