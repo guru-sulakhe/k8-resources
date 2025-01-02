@@ -13,6 +13,7 @@ spec:
     image: nginx
     imagePullPolicy: Always #keep this Always, it will pull the image if present or not
   tolerations:
-  - key: "example-key"
-    operator: "Exists"
-    effect: "NoSchedule"
+  - key: "project" #your key while taint an pod
+    operator: "Equal"
+    value: "expense"
+    effect: "NoSchedule" #your effect which you mentioned while taint the pod
