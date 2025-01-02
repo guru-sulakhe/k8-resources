@@ -1,4 +1,4 @@
-#"scheduling pod to run on a node by using preferredDuringScheduling of nodAffinity
+#"scheduling pod to run on different node by using preferredDuringScheduling of nodAffinity
 apiVersion: v1
 kind: Pod
 metadata:
