@@ -1,4 +1,4 @@
-#Scheduling pod based on the labels of the node
+#"scheduling pod to run on a node by using preferredDuringScheduling of nodAffinity
 apiVersion: v1
 kind: Pod
 metadata:
