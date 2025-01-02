@@ -14,7 +14,7 @@ spec:
     imagePullPolicy: Always #keep this Always, it will pull the image if present or not
   tolerations:
   - key: "project" #your key while taint an pod
-    operator: "Equal"
+    operator: "Equal" 
     value: "expense"
     effect: "NoSchedule" #your effect which you mentioned while taint the pod
   - key: "project" #your key while taint an pod
