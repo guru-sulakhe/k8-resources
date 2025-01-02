@@ -1,0 +1,18 @@
+#Tolerations are applied to pods. 
+#Tolerations allow the scheduler to schedule pods with matching taints. 
+#Tolerations allow scheduling but don't guarantee scheduling
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    env: test
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: IfNotPresent
+  tolerations:
+  - key: "example-key"
+    operator: "Exists"
+    effect: "NoSchedule"
