@@ -1,6 +1,7 @@
 #Tolerations are applied to pods. 
 #Tolerations allow the scheduler to schedule pods with matching taints. 
 #Tolerations allow scheduling but don't guarantee scheduling
+#scheduling pod to run on particular node
 apiVersion: v1
 kind: Pod
 metadata:
