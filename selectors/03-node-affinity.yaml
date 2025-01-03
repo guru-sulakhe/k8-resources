@@ -6,7 +6,7 @@ metadata:
 spec:
   affinity:
     nodeAffinity:
-      preferredDuringSchedulingIgnoredDuringExecution:
+      preferredDuringSchedulingIgnoredDuringExecution: #does'nt gaurentee for scheduling the pod in a node
       - weight: 1
         preference:
           matchExpressions:
