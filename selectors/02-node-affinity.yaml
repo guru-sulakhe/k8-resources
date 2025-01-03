@@ -1,3 +1,4 @@
+#Node affinity is conceptually similar to nodeSelector, allowing you to constrain which nodes your Pod can be scheduled on based on node labels.
 #Scheduling pod based on the labels of the node
 apiVersion: v1
 kind: Pod
