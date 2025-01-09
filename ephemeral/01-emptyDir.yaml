@@ -44,7 +44,7 @@ spec:
   - name: nginx-logs
     emptyDir: {}
   - name: filebeat-config
-    configMap:
+    configMap: #adding configMap filebeat to the volume
       name: filebeat #your filebeat configMap name
       items:
         - key: filebeat.yml
