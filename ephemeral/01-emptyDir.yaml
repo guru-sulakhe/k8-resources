@@ -1,4 +1,5 @@
 #first we need to set filebeat configuration, for that we use configMap
+#Accessing nginx logs in filebeat configMap and sending the logs to elasticsearch
 apiVersion: v1
 kind: configMap
 metadata: 
