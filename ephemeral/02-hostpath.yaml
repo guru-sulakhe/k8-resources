@@ -1,4 +1,4 @@
-# Here 3 pods will be created if there are 3 nodes in k8-cluster of aws
+# Here 3 pods will be created if there are 3 nodes in k8-cluster of aws by using DaemonSet
 # it will access every nodes /var/log and assign readOnly permissions to each of the nodes running in k8-cluster of AWS
 apiVersion: apps/v1
 kind: DaemonSet
@@ -44,5 +44,5 @@ spec:
       terminationGracePeriodSeconds: 30
       volumes:
       - name: varlog
-        hostPath: #hostpath is useful to access the host files and directories
+        hostPath: #hostpath is useful to access the host files and directories from the pod
           path: /var/log #every pod will have this location access
