@@ -45,4 +45,4 @@ spec:
       volumes:
       - name: varlog
         hostPath:
-          path: /var/log
+          path: /var/log #every pod will have this location access
