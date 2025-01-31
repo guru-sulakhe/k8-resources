@@ -24,7 +24,7 @@ data: #Setting  filebeat configuration
       elasticsearch:
         hosts: ["elasticsearch:9200"]
 ------
-#Setting nginx as sidecar pod where it can access the logs of the filebeat
+#Adding filebeat sidecar pod to nginx pod  where it can access the logs of the nginx
 kind: Pod
 apiVersion: v1
 metadata:
