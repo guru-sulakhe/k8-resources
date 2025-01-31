@@ -1,5 +1,5 @@
-# Here 3 pods will be created if there are 3 nodes in k8-cluster of aws by using DaemonSet
-# it will access every nodes /var/log and assign readOnly permissions to each of the nodes running in k8-cluster of AWS
+# Here DaemonSet will create 3 pods if there are 3 nodes in k8-cluster of aws 
+# with DaemonSet every nodes have access of /var/log and assign readOnly permissions
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
