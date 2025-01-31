@@ -45,4 +45,4 @@ spec:
       volumes:
       - name: varlog
         hostPath: #hostpath is useful to access the host files and directories from the pod
-          path: /var/log #every pod will have this location access
+          path: /var/log #every node will have this location access
