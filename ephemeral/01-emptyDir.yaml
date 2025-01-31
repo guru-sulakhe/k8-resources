@@ -24,6 +24,7 @@ data: #Setting  filebeat configuration
       elasticsearch:
         hosts: ["elasticsearch:9200"]
 ------
+#Setting nginx as sidecar pod where it can access the logs of the filebeat
 kind: Pod
 apiVersion: v1
 metadata:
@@ -41,7 +42,7 @@ spec:
     - name: filebeat-config
       mountPath: /usr/share/filebeat/filebeat.yml
       subPath: filebeat.yml
-    - name: nginx-logs
+    - name: nginx-logs #filebeat accessing nginx logs
       mountPath: /var/log/nginx/
   volumes: #creating volumes 
   - name: nginx-logs
