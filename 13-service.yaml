@@ -1,4 +1,6 @@
 # This service is used to call nginx Pod
+#  a Service is a method for exposing a network application that is running as one or more Pods in your cluster.
+# a Service will be accessed only inside kubernetes cluster only.
 apiVersion: v1
 kind: Service
 metadata: 
