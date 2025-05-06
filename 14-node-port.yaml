@@ -14,3 +14,8 @@ spec:
     port: 80 
     targetPort: 80
     nodePort: 32760
+
+  # NodePort extends the ClusterIP service and its visibility is internal and external to the cluster. 
+  # You can set a NodePort using the NodePort property, this is the port that the service will listen on from outside the cluster. 
+  # There is one requirement of using NodePort which is nodes must have public IP addresses. 
+  # The port must be in the range between 30000 and 32767 and if you don’t specify the NodePort value Kubernetes will assign it randomly.
