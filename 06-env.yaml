@@ -11,3 +11,4 @@ spec:
       value: 'devops'
     - name: duration
       value: '120 hrs'
+# allows you to set environment variables for a container, specifying a value directly for each variable that you name.
