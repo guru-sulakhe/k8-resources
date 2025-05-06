@@ -9,3 +9,8 @@ spec:
   containers:
   - name: nginx
     image: nginx
+
+# Labels are key-value pairs used to attach identifying metadata to Kubernetes objects. 
+# Kubernetes provides built-in support for querying objects via labels and applying bulk operations on the subset selected. 
+# Kubernetes labels are commonly used for sharing information with other colleagues. 
+# For example, you may use a label to record an owner identifier for the person responsible for a pod/deployment. 
