@@ -14,6 +14,11 @@ spec:
     port: 80 
     targetPort: 80
     nodePort: 32760 #this port will be fixed to the server IP.
+  
+# $ kubectl get svc
+# see nginx-np service is running
+# and watch clusterIp of nginx-np service where it is running
+# go to ec2 and edit security group of eks-cluster-expense-dev inbound rule by adding custom port, port range of 32760, with CIDR as 0.0.0.0/0
 
   # NodePort extends the ClusterIP service and its visibility is internal and external to the cluster. 
   # You can set a NodePort using the NodePort property, this is the port that the service will listen on from outside the cluster. 
