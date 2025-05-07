@@ -27,7 +27,7 @@ spec:
     spec:
     - name: nginx
       image: nginx
------
+---
 # This service is used to call nginx Pod
 apiVersion: v1
 kind: Service
