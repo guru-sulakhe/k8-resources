@@ -13,7 +13,7 @@ spec:
   - protocol: TCP
     port: 80 
     targetPort: 80
-    nodePort: 32760
+    nodePort: 32760 #this port will be fixed to the server IP.
 
   # NodePort extends the ClusterIP service and its visibility is internal and external to the cluster. 
   # You can set a NodePort using the NodePort property, this is the port that the service will listen on from outside the cluster. 
