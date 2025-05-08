@@ -6,7 +6,7 @@ kind: Service
 metadata: 
   name: nginx
 spec: 
-  selectors:
+  selector: #mention respective pod labels at which service can run
     name: frontend
     project: expense
     component: frontend
