@@ -12,6 +12,7 @@ spec:
     driver: ebs.csi.aws.com #EBS related Drivers
     fsType: ext4
     volumeHandle: vol-03c604538dd7d2f41 #your volume ID which is created recently in aws ec2 resource
+# $ kubectl get pv
 ---
 # claiming process of PersistentVolume
 # PVC---> Persistent Volume Claim, pod should claim,i..e i want the volume from pod
@@ -27,6 +28,9 @@ spec:
   resources:
     requests:
       storage: 5Gi #should be less than storage of Persistent volume 
+
+# $ kubectl get pvc
+# $ kubectl describe pvc ebs-static
 ---
 #Attaching pvc to pod for the usage of pvc
 #PVC should be represented in pod definition
@@ -50,6 +54,9 @@ spec:
   - name: persistent-storage
     persistentVolumeClaim:
       claimName: ebs-static #include your persistant volume name which is created above
+
+# $ kubectl get pods 
+# $ kubectl describe pod nginx-static
 ---
 # testing the application based on the internet we should use LoadBalancer Service
 kind: Service
@@ -65,3 +72,5 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 80
+
+# $ kubectl get services
