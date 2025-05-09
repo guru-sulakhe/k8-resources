@@ -48,7 +48,7 @@ spec:
     volumeMounts:
     - name: persistent-storage
       mountPath: /usr/share/nginx/html #nginx html mountpath
-  nodeSelector: #this is used to select the pod in the above avialability zone
+  nodeSelector: #scheduilinng the pod to run on the us-east-1c node
     topology.kubernetes.io/zone: us-east-1c
   volumes:
   - name: persistent-storage
