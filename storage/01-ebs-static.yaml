@@ -30,7 +30,7 @@ spec:
       storage: 5Gi #should be less than storage of Persistent volume 
 
 # $ kubectl get pvc
-# $ kubectl describe pvc ebs-static
+# $ kubectl describe pvc ebs-static --> if success then you should get status:Bound
 ---
 #Attaching pvc to pod for the usage of pvc
 #PVC should be represented in pod definition
