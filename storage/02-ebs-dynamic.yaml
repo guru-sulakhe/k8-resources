@@ -11,6 +11,9 @@ spec:
   resources:
     requests:
       storage: 4Gi #creating 4Gi volume size of volume in ec2 resource of aws
+
+# $ kubectl get pods
+# $ kubectl get pv
 ---
 #Attaching pvc to pod for the usage of pvc
 #PVC should be represented in pod definition
@@ -34,3 +37,5 @@ spec:
   - name: persistent-storage
     persistentVolumeClaim:
       claimName: ebs-dynamic #include your persistant volume name which is created above
+
+# $ kubectl get pods
