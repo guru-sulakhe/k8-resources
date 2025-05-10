@@ -48,7 +48,7 @@ spec:
     volumeMounts:
     - name: persistent-storage
       mountPath: /usr/share/nginx/html #nginx html mountpath
-  nodeSelector: #scheduilinng node to run based on the availability zone of volume is running
+  nodeSelector: #scheduilinng pod to run based on the availability zone of node is running in EKS cluster of AWS
     topology.kubernetes.io/zone: us-east-1c
   volumes:
   - name: persistent-storage
