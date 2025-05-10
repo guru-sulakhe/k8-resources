@@ -11,7 +11,7 @@ spec:
   resources:
     requests:
       storage: 4Gi #creating 4Gi volume size of volume in ec2 resource of aws
--------
+---
 #Attaching pvc to pod for the usage of pvc
 #PVC should be represented in pod definition
 apiVersion: v1

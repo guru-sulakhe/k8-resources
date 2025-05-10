@@ -14,7 +14,7 @@ spec:
   csi:
     driver: efs.csi.aws.com
     volumeHandle: "fs-0024g198788635gc" # your EFS volume ID which is created in aws 
--------
+---
 # claiming process of PersistentVolume
 # PVC---> Persistent Volume Claim, pod should claim,i..e i want the volume from pod
 apiVersion: v1
@@ -29,7 +29,7 @@ spec:
   resources:
     requests:
       storage: 5Gi
-------
+---
 #Attaching pvc to pod for the usage of pvc
 #PVC should be represented in pod definition
 apiVersion: v1
@@ -49,7 +49,7 @@ spec:
   - name: persistent-storage
     persistentVolumeClaim:
       claimName: efs-static-claim #pvc name
--------
+---
 # testing the application based on the internet we should use LoadBalancer Service
 kind: Service
 apiVersion: v1

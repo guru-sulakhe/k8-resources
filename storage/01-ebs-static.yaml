@@ -72,5 +72,6 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 80
+    nodePort: 32761
 
 # $ kubectl get services
