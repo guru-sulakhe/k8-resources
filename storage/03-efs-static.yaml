@@ -63,7 +63,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector: #selector should have same labels which are included in pod definition of PVC 
-    purpose: efs-static
+    purpose: efs-static # labels of nginx pod
   ports:
   - protocol: TCP
     port: 80
