@@ -11,7 +11,7 @@ spec:
   resources:
     requests:
       storage: 5Gi
-------
+---
 #Attaching pvc to pod for the usage of pvc
 #PVC should be represented in pod definition
 apiVersion: v1
@@ -31,7 +31,7 @@ spec:
     - name: persistent-storage
       persistentVolumeClaim:
         claimName: efs-dynamic-claim #your pvc name
-------
+---
 # testing the application based on the internet we should use ClusterIP Service
 kind: Service
 apiVersion: v1
