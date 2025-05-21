@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: store
-  replicas: 2 #Here 2 pods of cache are created 
+  replicas: 2 #Here 2 pods of cache are created and will be scheduled in different nodes, pods will run in two different nodes
   template:
     metadata:
       labels:
