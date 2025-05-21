@@ -11,7 +11,7 @@ spec:
   - name: nginx
     image: nginx
     imagePullPolicy: Always #This must be included as Always
-------
+---
 #Running pod-2 where pod-1 is running in node by using podAffinity
 apiVersion: v1
 kind: Pod
@@ -35,7 +35,7 @@ spec:
   - name: nginx
     image: nginx
     imagePullPolicy: Always #This must be included as Always
-------
+---
 #Running pod-3 in different node  where pod-1 is not running in a node by using pod-AntiAffinity
 #The anti-affinity rule specifies that the scheduler should try to avoid scheduling the Pod on a node 
 apiVersion: v1
