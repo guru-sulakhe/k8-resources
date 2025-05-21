@@ -19,3 +19,4 @@ spec:
     image: nginx
 
 # $ kubectl get pods -o wide
+# this will run the pod in different node because given node is tainted
