@@ -26,6 +26,10 @@ spec:
       containers:
       - name: redis-server
         image: redis:3.2-alpine
+
+# Here,
+# 1st pod --> 1st pod will run in different node
+# 2nd pod --> 2nd pod will run on different node where pod-1 is not running
 ---
 #These are application pods
 apiVersion: apps/v1
@@ -64,3 +68,7 @@ spec:
       containers:
       - name: web-app
         image: nginx:1.16-alpine
+
+# $ kubectl get pods -o wide
+# 1st pod --> 1st pod is running on a node,as per affinity it should go to where redis is running
+# 2nd pod --> 2nd pod will run in a node of redis is running and pod-1 is not running
