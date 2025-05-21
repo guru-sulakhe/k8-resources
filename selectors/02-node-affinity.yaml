@@ -25,3 +25,5 @@ spec:
   - key: "project" #your key while taint an pod
     operator: "Exists"
     effect: "NoSchedule"
+
+# $ kubectl get pods -o wide
