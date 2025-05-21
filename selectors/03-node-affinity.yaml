@@ -11,9 +11,9 @@ spec:
         preference:
           matchExpressions:
             - key: project #your node labels key name
-            operator: In
-            values:
-            - expense #your node labels value name
+              operator: In
+              values:
+              - expense #your node labels value name
   containers:
   - name: with-node-affinity-1
     image: nginx
