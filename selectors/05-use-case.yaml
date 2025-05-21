@@ -72,3 +72,5 @@ spec:
 # $ kubectl get pods -o wide
 # 1st pod --> 1st pod is running on a node,as per affinity it should go to where redis is running
 # 2nd pod --> 2nd pod will run in a node of redis is running and pod-1 is not running
+
+# Using pod-affinity and pod-AntiAffinity we could decrease the latency of the applications
