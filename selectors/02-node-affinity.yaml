@@ -17,7 +17,7 @@ spec:
   containers:
   - name: with-node-affinity
     image: nginx
-  tolerations:
+  tolerations: #applying tolerations because we tainted the node with these labels
   - key: "project" #your key while taint an pod
     operator: "Equal" 
     value: "expense"
