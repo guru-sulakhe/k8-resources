@@ -62,3 +62,6 @@ spec:
   - name: nginx
     image: nginx
     imagePullPolicy: Always #This must be included as Always
+
+
+# $ kubectl get pods -o wide
