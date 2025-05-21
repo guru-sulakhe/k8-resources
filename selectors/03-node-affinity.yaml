@@ -17,3 +17,5 @@ spec:
   containers:
   - name: with-node-affinity-1
     image: nginx
+
+# $ kubectl get pods -o wide
