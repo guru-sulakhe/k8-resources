@@ -54,5 +54,6 @@ spec:
         - key: filebeat.yml
           path: filebeat.yml
 
-# $ kubectl get pods -n kube-system
+# $ kubens default
+# $ kubectl get pods 
 # $ kubectl logs nginx -c filebeast
