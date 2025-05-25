@@ -46,3 +46,5 @@ spec:
       - name: varlog
         hostPath: #hostpath is useful to access the host files and directories from the pod
           path: /var/log #every node will have this location access
+
+# $ kubectl get pods -n kube-system
