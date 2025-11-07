@@ -53,7 +53,7 @@ spec:
   volumes:
   - name: persistent-storage
     persistentVolumeClaim:
-      claimName: ebs-static #include your persistant volume name which is created above
+      claimName: ebs-static #include your persistant volume claim(PVC) name which is created above
 
 # $ kubectl get pods 
 # $ kubectl describe pod nginx-static
