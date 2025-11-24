@@ -34,6 +34,5 @@ spec:
     operator: "Exists"
     effect: "NoSchedule"
 
-# cd /c/users/guruv/repos/k8-resources/selectors/
 # $ kubectl apply -f 01-tolerations.yaml
 # $ kubectl get pods -o wide
