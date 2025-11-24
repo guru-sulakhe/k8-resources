@@ -1,3 +1,15 @@
+# Befor Applying Tolerations make sure any one node of the EKS is tainted.
+# to taint the node:
+# $ kubectl get nodes
+# $ kubectl taint nodes <node-name> <key>=<value>:<effect>
+# $ kubectl taint nodes ip-192-168-34-12.us-east-2.compute.internal project=expense:NoSchedule
+
+
+# effect types in taint:
+# 1.NoSchedule: Pods without a toleration will not be scheduled on this node
+# 2.NoExecute: Existing pods without toleration will be evicted
+# 3.PreferNoSchedule: Scheduler will try to avoid the node, but not guaranteed
+
 #Tolerations are applied to pods. 
 #Tolerations allow the scheduler to schedule pods with matching taints. 
 #Tolerations allow scheduling but don't guarantee scheduling
