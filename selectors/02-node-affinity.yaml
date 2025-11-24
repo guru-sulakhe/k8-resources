@@ -33,3 +33,5 @@ spec:
     effect: "NoSchedule"
 
 # $ kubectl get pods -o wide
+
+# requriedDuringSchedulingIgnoredDuringExecution --> pod will not run even you set affinity. we need to apply tolerations. So in this case until you apply tolerations pod will in pending state.
