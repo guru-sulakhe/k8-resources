@@ -1,3 +1,9 @@
+# Befor running the nodeAffinity make sure that you labeled the nodes of the EKS cluster. run the below command to label the node.
+# $ kubectl get nodes
+# $ kubectl label nodes <node-ip> key=value
+# $ kubectl label nodes ip-192-168-42-153.ec2.internal project=expense
+
+
 #Node affinity is conceptually similar to nodeSelector, allowing you to constrain which nodes your Pod can be scheduled on based on node labels.
 #Scheduling pod based on the labels of the node
 apiVersion: v1
