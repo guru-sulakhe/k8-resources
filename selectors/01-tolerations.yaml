@@ -1,4 +1,4 @@
-# Befor Applying Tolerations make sure any one node of the EKS is tainted.  
+# Befor Applying Tolerations make sure any one node of the EKS is tainted. Even though the node is tainted, it doesn't gaurentee you to scheduling the pods.
 # to taint the node:
 # $ kubectl get nodes
 # $ kubectl taint nodes <node-name> <key>=<value>:<effect>
