@@ -1,4 +1,4 @@
-# Befor running the nodeAffinity make sure that you labeled the nodes of the EKS cluster. run the below command to label the node.
+# Befor running the nodeAffinity make sure that you labeled the nodes of the EKS cluster and applied taints to the nodes of EKS cluster. run the below command to label the node.
 # $ kubectl get nodes
 # $ kubectl label nodes <node-ip> key=value
 # $ kubectl label nodes ip-192-168-42-153.ec2.internal project=expense
