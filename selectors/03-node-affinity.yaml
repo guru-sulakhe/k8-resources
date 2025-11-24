@@ -18,6 +18,7 @@ spec:
   - name: with-node-affinity-1
     image: nginx
 
+# $ kubectl apply -f 03-node-affinity.yaml
 # $ kubectl get pods -o wide
 # this will run the pod in different node because given node is tainted
 # prefferedDuringSchedulingIgnoredDuringExecution --> scheduler tries the asked node, but it can't schedule because it is tainted node. since it is only preffered it can schedule on different node.
