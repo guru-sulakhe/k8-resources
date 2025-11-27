@@ -70,7 +70,7 @@ spec:
         image: nginx:1.16-alpine
 
 # $ kubectl get pods -o wide
-# 1st pod --> 1st pod is running on a node,as per affinity it should go to where redis is running
+# 1st pod --> 1st pod is running on a node,as per affinity it should go to where redis is running i.,e pod 1 runs in (app : store )label pod
 # 2nd pod --> 2nd pod will run in a node of redis is running and pod-1 is not running
 
 # Using pod-affinity and pod-AntiAffinity we could decrease the latency of the applications
