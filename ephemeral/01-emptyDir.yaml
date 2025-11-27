@@ -7,7 +7,7 @@ kind: configMap
 metadata: 
   name: filebeat
 data: #Setting  filebeat configuration
-  filebeat.yml: | # accessing the nignx file of logs and sending the output to the filebeat
+  filebeat.yml: | # loading filebeat modules,accessing the nignx file of logs and sending the output to the filebeat
     filebeat:
       config:
         modules:
